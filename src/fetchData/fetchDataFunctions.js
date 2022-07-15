@@ -8,6 +8,6 @@ export async function fetchData(url) {
       return jsonData;
     }
   } catch (error) {
-    console.log(`Something went wrong (${error})`);
+    throw new error(`Something went wrong (${error})`);
   }
 }

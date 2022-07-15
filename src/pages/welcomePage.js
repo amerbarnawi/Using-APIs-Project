@@ -1,10 +1,11 @@
 "use strict";
 
-import { USER_INTERFACE_ID } from "../constant.js";
+import { OPEN_LIBRARY_BUTTON_ID, USER_INTERFACE_ID } from "../constant.js";
 import { createWelcomeElements } from "../views/welcomeView.js";
 import { renderNasaData } from "../features/WelcomePageFeatures/nasaData.js";
 import { renderQuoteData } from "../features/WelcomePageFeatures/quoteData.js";
 import { renderFunFactData } from "../features/WelcomePageFeatures/funFactData.js";
+import { initSearchPage } from "./librarySearchPage.js";
 
 export function initWelcomePage() {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -16,4 +17,11 @@ export function initWelcomePage() {
   // renderNasaData();
   renderQuoteData();
   renderFunFactData();
+
+  const libraryButton = document.getElementById(OPEN_LIBRARY_BUTTON_ID);
+  libraryButton.addEventListener("click", goToLibrary);
 }
+
+const goToLibrary = () => {
+  initSearchPage();
+};
