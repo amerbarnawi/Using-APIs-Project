@@ -4,7 +4,7 @@ import {
   SEARCH_BUTTON_ID,
   SEARCH_INPUT_ID,
   SEARCH_RESULTS_ID,
-  SEARCH_RESULT_ITEM_ID,
+  SEARCH_RESULT_CARD_ID,
   USER_INTERFACE_ID,
 } from "../constant.js";
 
@@ -26,15 +26,17 @@ export function createlibrarySearchElements() {
   return elements;
 }
 
-export function createSearchResultCard(src, bookName, authorName) {
-  const resultItemDiv = document.createElement("div");
-  resultItemDiv.id = SEARCH_RESULT_ITEM_ID;
-  resultItemDiv.innerHTML = String.raw`
+export function createSearchResultCard(src, bookName, authorName, key) {
+  const resultCardDiv = document.createElement("div");
+  resultCardDiv.setAttribute("key", key);
+  resultCardDiv.id = SEARCH_RESULT_CARD_ID;
+
+  resultCardDiv.innerHTML = String.raw`
 
             <img src="${src}" alt="Book cover">
             <h2>${bookName}</h2>
             <p>${authorName}</p>
     `;
 
-  return resultItemDiv;
+  return resultCardDiv;
 }

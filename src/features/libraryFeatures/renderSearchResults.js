@@ -1,9 +1,11 @@
 import { createSearchResultCard } from "../../views/librarySearchView.js";
+import { initBookDetails } from "../../pages/bookDetailsPage.js";
 
 export function renderResultsCards(jsonSearchResults, resultsElements) {
   jsonSearchResults.docs.forEach((book) => {
     const bookTitle = book.title;
     const authorName = book.author_name;
+    const bookKey = book.key;
     let photoSrc = "https://";
 
     if (book.cover_i) {
@@ -13,9 +15,13 @@ export function renderResultsCards(jsonSearchResults, resultsElements) {
     const searchResultCard = createSearchResultCard(
       photoSrc,
       bookTitle,
-      authorName
+      authorName,
+      bookKey
     );
-
     resultsElements.appendChild(searchResultCard);
+
+    searchResultCard.addEventListener("click", async () => {
+      await initBookDetails(bookKey, bookTitle, authorName, photoSrc);
+    });
   });
 }

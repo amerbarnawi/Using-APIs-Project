@@ -11,6 +11,7 @@ export function initFooter() {
 function createFooterElements() {
   const footerElements = String.raw`
     
+        <hr>
         <h1>The footer</h1>
         <img src="http://" alt="logo image">
     `;

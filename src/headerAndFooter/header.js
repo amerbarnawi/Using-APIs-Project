@@ -13,6 +13,7 @@ function createHeaderElements() {
     
         <h1>The header : Project Name</h1>
         <img src="http://" alt="logo image">
+        <hr>
     `;
 
   return headerElements;
