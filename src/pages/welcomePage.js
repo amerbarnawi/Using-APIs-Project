@@ -6,8 +6,16 @@ import { renderNasaData } from "../features/WelcomePageFeatures/nasaData.js";
 import { renderQuoteData } from "../features/WelcomePageFeatures/quoteData.js";
 import { renderFunFactData } from "../features/WelcomePageFeatures/funFactData.js";
 import { initSearchPage } from "./librarySearchPage.js";
+import { refreshSessionStorage } from "../storage.js";
+import { libraryData } from "../data.js";
 
 export function initWelcomePage() {
+  // Data for the session storage.
+  libraryData.currentPage.searchPage = false;
+  libraryData.currentPage.bookDetailsPage = false;
+  refreshSessionStorage();
+
+  //initWelcomePage.
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = "";
 

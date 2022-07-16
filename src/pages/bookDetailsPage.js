@@ -1,10 +1,15 @@
 import { BUTTON_BACK_TO_SEARCH_ID, USER_INTERFACE_ID } from "../constant.js";
-import { messageFromLibrary } from "../features/libraryFeatures/libraryMessage.js";
 import { fetchData } from "../fetchData/fetchDataFunctions.js";
 import { createBookDetailsElement } from "../views/bookDetailsView.js";
 import { initSearchPage } from "./librarySearchPage.js";
+import { libraryData } from "../data.js";
+import { refreshSessionStorage } from "../storage.js";
 
 export async function initBookDetails(key, title, author, src) {
+  // Data for the storage.
+  libraryData.currentPage.searchPage = false;
+  libraryData.currentPage.bookDetailsPage = true;
+
   try {
     const url = `http://openlibrary.org${key}.json`;
     const jsonBookDetails = await fetchData(url);
@@ -27,6 +32,12 @@ export async function initBookDetails(key, title, author, src) {
       bookDescription
     );
 
+    // Data for the storage.
+    libraryData.bookDetailsPage.author = author;
+    libraryData.bookDetailsPage.title = title;
+    libraryData.bookDetailsPage.imgSrc = src;
+    libraryData.bookDetailsPage.key = key;
+
     console.log(title);
     console.log(author);
     console.log(src);
@@ -42,6 +53,7 @@ export async function initBookDetails(key, title, author, src) {
     backButton.addEventListener("click", () => {
       initSearchPage();
     });
+    refreshSessionStorage();
   } catch (error) {
     console.log(error.message);
   }
