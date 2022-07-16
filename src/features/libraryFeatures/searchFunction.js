@@ -9,30 +9,30 @@ export async function search() {
   const searchInput = document.getElementById(SEARCH_INPUT_ID);
   const resultsElements = document.getElementById(SEARCH_RESULTS_ID);
 
-  messageFromLibrary("Please wait, books are loading..", resultsElements);
+  messageFromLibrary("Please wait, books are loading..");
 
   const url = `http://openlibrary.org/search.json?q=${searchInput.value}`;
 
-  try {
-    const jsonSearchResults = await fetchData(url);
+  if (searchInput.value !== "") {
+    try {
+      const jsonSearchResults = await fetchData(url);
 
-    if (jsonSearchResults.docs.length > 0) {
-      // In case there is results.
-      const numberFound = jsonSearchResults.numFound;
-      messageFromLibrary(
-        `You search for (${searchInput.value}), I found (${numberFound}) result!`,
-        resultsElements
-      );
+      if (jsonSearchResults.docs.length > 0) {
+        // In case there is results.
+        const numberFound = jsonSearchResults.numFound;
+        messageFromLibrary(
+          `You search for (${searchInput.value}), I found (${numberFound}) result!`
+        );
 
-      renderResultsCards(jsonSearchResults, resultsElements);
-    } else {
-      // In case there is no results.
-      messageFromLibrary("Sorry, Can not find results!", resultsElements);
+        renderResultsCards(jsonSearchResults, resultsElements);
+      } else {
+        // In case there is no results.
+        messageFromLibrary("Sorry, Can not find results!");
+      }
+    } catch (error) {
+      messageFromLibrary(`Sorry, Something went wrong (${error.message})`);
     }
-  } catch (error) {
-    messageFromLibrary(
-      `Sorry, Something went wrong (${error.message})`,
-      resultsElements
-    );
+  } else {
+    messageFromLibrary("Please, write something to search!");
   }
 }

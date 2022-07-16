@@ -7,7 +7,7 @@ export const libraryData = {
   bookDetailsPage: {
     title: "",
     author: "",
-    imgSrc: "https://",
-    key: 0,
+    imgSrc: "",
+    key: "",
   },
 };

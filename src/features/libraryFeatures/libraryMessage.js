@@ -1,9 +1,9 @@
 import { LIBRARY_MESSAGE_ID } from "../../constant.js";
 
-export function messageFromLibrary(message, element) {
-  element.innerHTML = "";
-  const waitText = document.createElement("p");
-  waitText.id = LIBRARY_MESSAGE_ID;
+export function messageFromLibrary(message) {
+  const msgDiv = document.getElementById(LIBRARY_MESSAGE_ID);
+  msgDiv.innerHTML = "";
+  const waitText = document.createElement("h3");
   waitText.textContent = message;
-  element.appendChild(waitText);
+  msgDiv.appendChild(waitText);
 }

@@ -11,7 +11,7 @@ import { libraryData } from "../data.js";
 import { refreshSessionStorage } from "../storage.js";
 
 export async function initSearchPage() {
-  // Data for the storage
+  // Data for the storage.
   libraryData.currentPage.searchPage = true;
   console.log(libraryData.currentPage.searchPage);
   libraryData.currentPage.bookDetailsPage = false;
@@ -30,6 +30,7 @@ export async function initSearchPage() {
   };
 
   searchButton.addEventListener("click", async () => {
+    // When search function is run, it will call this function: renderResultsCards.
     await search();
     searchInput.value = "";
   });

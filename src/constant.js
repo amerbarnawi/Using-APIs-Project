@@ -31,3 +31,4 @@ export const SEARCH_INPUT_ID = "search-inbut";
 export const LIBRARY_MESSAGE_ID = "library-message";
 export const BUTTON_BACK_TO_SEARCH_ID = "button-back-to-search";
 export const BUTTON_BACK_TO_WELCOME_ID = "button-back-to-welcome";
+export const BK_COVERS_ID = "bk-imgs";

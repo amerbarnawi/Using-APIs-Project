@@ -6,14 +6,14 @@ export function renderResultsCards(jsonSearchResults, resultsElements) {
     const bookTitle = book.title;
     const authorName = book.author_name;
     const bookKey = book.key;
-    let photoSrc = "https://";
+    let imgSrc = "https://";
 
     if (book.cover_i) {
-      photoSrc = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
+      imgSrc = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
     }
 
     const searchResultCard = createSearchResultCard(
-      photoSrc,
+      imgSrc,
       bookTitle,
       authorName,
       bookKey
@@ -21,7 +21,7 @@ export function renderResultsCards(jsonSearchResults, resultsElements) {
     resultsElements.appendChild(searchResultCard);
 
     searchResultCard.addEventListener("click", async () => {
-      await initBookDetails(bookKey, bookTitle, authorName, photoSrc);
+      await initBookDetails(bookKey, bookTitle, authorName, imgSrc);
     });
   });
 }
