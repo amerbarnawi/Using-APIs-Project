@@ -3,7 +3,6 @@
 import {
   SEARCH_BUTTON_ID,
   SEARCH_INPUT_ID,
-  SEARCH_RESULTS_ID,
   USER_INTERFACE_ID,
 } from "../constant.js";
 import { search } from "../features/libraryFeatures/searchFunction.js";
@@ -32,11 +31,4 @@ export async function initSearchPage() {
       searchButton.click();
     }
   });
-
-  //   const searchResultsDiv = document.getElementById(SEARCH_RESULTS_ID);
-  //   console.log(Array.isArray(searchResultsDiv.children));
-  //   console.log(searchResultsDiv.children[1]);
-  //   Array.from(searchResultsDiv.children).forEach((card) => {
-  //     console.log(card);
-  //   });
 }

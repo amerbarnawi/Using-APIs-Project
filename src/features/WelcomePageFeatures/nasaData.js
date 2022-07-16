@@ -16,10 +16,7 @@ export async function renderNasaData() {
     nasaPicture.src = jsonNasaData.url;
     nasaDescription.textContent = jsonNasaData.explanation;
   } catch (error) {
-    (error) => {
-      console.log("AMER");
-      nasaDescription.textContent = `Sorry, something went wrong (${error})`;
-      nasaPicture.alt = `Sorry, something went wrong (${error})`;
-    };
+    nasaDescription.textContent = `Sorry, something went wrong (${error.message})`;
+    nasaPicture.alt = `Sorry, something went wrong (${error.message})`;
   }
 }

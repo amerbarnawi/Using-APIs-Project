@@ -30,12 +30,9 @@ export async function search() {
       messageFromLibrary("Sorry, Can not find results!", resultsElements);
     }
   } catch (error) {
-    (error) => {
-      console.log("Iam");
-    };
-    //   messageFromLibrary(
-    //     `Sorry, Something went wrong (${error})`,
-    //     resultsElements
-    //   );
+    messageFromLibrary(
+      `Sorry, Something went wrong (${error.message})`,
+      resultsElements
+    );
   }
 }

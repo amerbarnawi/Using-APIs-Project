@@ -10,6 +10,6 @@ export async function renderFunFactData() {
     const jsonFunFactData = await fetchData(FUN_FACT_URL);
     funFactText.textContent = jsonFunFactData.data.fact;
   } catch (error) {
-    funFactText.textContent = `Something went wrong (${error})`;
+    funFactText.textContent = `Something went wrong (${error.message})`;
   }
 }

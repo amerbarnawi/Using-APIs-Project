@@ -15,7 +15,7 @@ export async function renderQuoteData() {
       quoteAuthor.textContent = randomQuote.quoteAuthor;
     }
   } catch (error) {
-    quoteText.textContent = `Sorry, something went wrong (${error})`;
+    quoteText.textContent = `Sorry, something went wrong (${error.message})`;
   }
 }
 
