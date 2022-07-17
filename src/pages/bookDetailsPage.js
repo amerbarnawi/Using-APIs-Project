@@ -4,7 +4,8 @@ import { createBookDetailsElement } from "../views/bookDetailsView.js";
 import { initSearchPage } from "./librarySearchPage.js";
 import { libraryData } from "../data.js";
 import { refreshSessionStorage } from "../storage.js";
-import { renderBkImgs } from "../features/libraryFeatures/renderBookImgs.js";
+import { renderBkCovers } from "../features/libraryFeatures/renderBookCovers.js";
+import { renderMessage } from "../features/libraryFeatures/libraryMessage.js";
 
 export async function initBookDetails(key, title, author, src) {
   // Data for the storage.
@@ -51,7 +52,7 @@ export async function initBookDetails(key, title, author, src) {
     userInterface.appendChild(bookDetailsElement);
 
     if (jsonBookDetails.covers) {
-      renderBkImgs(jsonBookDetails.covers);
+      renderBkCovers(jsonBookDetails.covers);
     }
 
     const backButton = document.getElementById(BUTTON_BACK_TO_SEARCH_ID);
@@ -60,6 +61,6 @@ export async function initBookDetails(key, title, author, src) {
     });
     refreshSessionStorage();
   } catch (error) {
-    console.log(error.message);
+    renderMessage(`Sorry, something went wrong (${error.message})`);
   }
 }

@@ -2,9 +2,9 @@
 
 import { OPEN_LIBRARY_BUTTON_ID, USER_INTERFACE_ID } from "../constant.js";
 import { createWelcomeElements } from "../views/welcomeView.js";
-import { renderNasaData } from "../features/WelcomePageFeatures/nasaData.js";
-import { renderQuoteData } from "../features/WelcomePageFeatures/quoteData.js";
-import { renderFunFactData } from "../features/WelcomePageFeatures/funFactData.js";
+import { renderNasaData } from "../features/WelcomePageFeatures/nasa.js";
+import { renderQuoteData } from "../features/WelcomePageFeatures/quote.js";
+import { renderFunFactData } from "../features/WelcomePageFeatures/funFact.js";
 import { initSearchPage } from "./librarySearchPage.js";
 import { refreshSessionStorage } from "../storage.js";
 import { libraryData } from "../data.js";

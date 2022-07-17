@@ -1,6 +1,6 @@
 import { BK_COVERS_ID } from "../../constant.js";
 
-export function renderBkImgs(imagesIdArray) {
+export function renderBkCovers(imagesIdArray) {
   const imagesUl = document.getElementById(BK_COVERS_ID);
 
   imagesIdArray.forEach((id) => {

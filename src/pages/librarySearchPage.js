@@ -25,6 +25,7 @@ export async function initSearchPage() {
 
   const searchButton = document.getElementById(SEARCH_BUTTON_ID);
   const searchInput = document.getElementById(SEARCH_INPUT_ID);
+
   document.searchButton = function (event) {
     event.preventDefault();
   };

@@ -1,7 +1,7 @@
 import { createSearchResultCard } from "../../views/librarySearchView.js";
 import { initBookDetails } from "../../pages/bookDetailsPage.js";
 
-export function renderResultsCards(jsonSearchResults, resultsElements) {
+export function renderResultsCards(jsonSearchResults, resultsElement) {
   jsonSearchResults.docs.forEach((book) => {
     const bookTitle = book.title;
     const authorName = book.author_name;
@@ -18,7 +18,7 @@ export function renderResultsCards(jsonSearchResults, resultsElements) {
       authorName,
       bookKey
     );
-    resultsElements.appendChild(searchResultCard);
+    resultsElement.appendChild(searchResultCard);
 
     searchResultCard.addEventListener("click", async () => {
       await initBookDetails(bookKey, bookTitle, authorName, imgSrc);

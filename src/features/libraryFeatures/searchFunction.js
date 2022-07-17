@@ -2,14 +2,14 @@
 
 import { SEARCH_INPUT_ID, SEARCH_RESULTS_ID } from "../../constant.js";
 import { fetchData } from "../../fetchData/fetchDataFunctions.js";
-import { messageFromLibrary } from "./libraryMessage.js";
+import { renderMessage } from "./libraryMessage.js";
 import { renderResultsCards } from "./renderSearchResults.js";
 
 export async function search() {
   const searchInput = document.getElementById(SEARCH_INPUT_ID);
-  const resultsElements = document.getElementById(SEARCH_RESULTS_ID);
+  const resultsElement = document.getElementById(SEARCH_RESULTS_ID);
 
-  messageFromLibrary("Please wait, books are loading..");
+  renderMessage("Please wait, books are loading..");
 
   const url = `http://openlibrary.org/search.json?q=${searchInput.value}`;
 
@@ -20,19 +20,21 @@ export async function search() {
       if (jsonSearchResults.docs.length > 0) {
         // In case there is results.
         const numberFound = jsonSearchResults.numFound;
-        messageFromLibrary(
+        renderMessage(
           `You search for (${searchInput.value}), I found (${numberFound}) result!`
         );
 
-        renderResultsCards(jsonSearchResults, resultsElements);
+        resultsElement.innerHTML = "";
+        renderResultsCards(jsonSearchResults, resultsElement);
       } else {
         // In case there is no results.
-        messageFromLibrary("Sorry, Can not find results!");
+        renderMessage("Sorry, Can not find results!");
       }
     } catch (error) {
-      messageFromLibrary(`Sorry, Something went wrong (${error.message})`);
+      renderMessage(`Sorry, Something went wrong (${error.message})`);
     }
   } else {
-    messageFromLibrary("Please, write something to search!");
+    // In case the user did not write any thing to search for.
+    renderMessage("Please, write something to search!");
   }
 }
