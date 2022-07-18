@@ -11,18 +11,25 @@ import {
   FUN_FACT_ID,
   QUOTE_FACT_DIV_ID,
   FACT_DIV_ID,
+  WELCOME_PG_ID,
 } from "../constant.js";
 
 export function createWelcomeElements() {
   const welcomeElements = document.createElement("div");
+  welcomeElements.id = WELCOME_PG_ID;
 
   welcomeElements.innerHTML = String.raw`
-    <h1>Welcome to my app</h1>
+    <h2>Welcome to the library.</h2>
 
     <div id=${NASA_DIV_ID}>
-      <img id=${NASA_PICTURE_ID} src='https://' alt='Picture Of The Day from NASA.'>
-      <p id=${NASA_DESCRIPTION_ID}>Please wait for The NASA photo Description ..</p>
-    </div>
+      <div>
+        <img id=${NASA_PICTURE_ID} src='https://' alt='Picture Of The Day from NASA.'>
+      </div>
+      <div>
+        <h2>Picture of the day ( NASA ): </h2>
+        <p id=${NASA_DESCRIPTION_ID}>Please wait for The NASA photo Description ..</p>
+        </div>
+      </div>
 
     <div id=${QUOTE_FACT_DIV_ID}>
       <div id=${QUOTE_DIV_ID}>
@@ -36,8 +43,6 @@ export function createWelcomeElements() {
         <p id=${FUN_FACT_ID}>Please wait for a Fun fact ..</p>
       </div>
     </div>
-
-    <button id=${OPEN_LIBRARY_BUTTON_ID}>Go to the library</button>
     `;
 
   return welcomeElements;

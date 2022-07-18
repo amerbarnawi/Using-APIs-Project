@@ -1,8 +1,9 @@
-import { USER_INTERFACE_ID } from "../constant.js";
+import { FOOTER_ID, USER_INTERFACE_ID } from "../constant.js";
 
 export function initFooter() {
   const userInterace = document.getElementById(USER_INTERFACE_ID);
   const footerDiv = document.createElement("div");
+  footerDiv.id = FOOTER_ID;
 
   footerDiv.innerHTML = createFooterElements();
   userInterace.after(footerDiv);
@@ -11,9 +12,8 @@ export function initFooter() {
 function createFooterElements() {
   const footerElements = String.raw`
     
-        <hr>
-        <h1>The footer</h1>
-        <img src="http://" alt="logo image">
+      <p>Open your mind Library</p>
+      <h6>@Amer Barnawi</h6>
     `;
 
   return footerElements;

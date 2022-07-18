@@ -6,7 +6,7 @@ export function renderResultsCards(jsonSearchResults, resultsElement) {
     const bookTitle = book.title;
     const authorName = book.author_name;
     const bookKey = book.key;
-    let imgSrc = "https://";
+    let imgSrc = "../public/assets/empty_book_cover.jpeg";
 
     if (book.cover_i) {
       imgSrc = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;

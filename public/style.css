@@ -4,6 +4,360 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: fit-content;
+}
+p {
+  color: rgb(110, 107, 107);
+  font-size: 17px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
 #library-message {
   display: none;
+}
+
+/* Header */
+
+#header {
+  background-image: url("assets/banner.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  background-color: rgb(236, 233, 233);
+  height: 200px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 3px #7f88ab;
+}
+/* The logo ( open your mind). */
+#header h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  font-family: "Apple Chancery";
+  font-weight: bold;
+  color: rgb(255, 60, 0);
+  background-color: rgba(250, 251, 252, 0.6);
+  border-bottom-right-radius: 20%;
+  border-top-left-radius: 20%;
+}
+
+/* This is navigation bar. */
+#header div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  align-self: flex-end;
+  background-color: rgba(250, 251, 252, 0.6);
+  border-bottom-right-radius: 20%;
+  border-top-left-radius: 20%;
+  padding: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+#header div button,
+#search-button,
+#button-back-to-search {
+  min-width: fit-content;
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #7f88ab;
+  color: white;
+  margin: 8px;
+  border: none;
+  font-family: georgia, serif;
+}
+
+#header div button:hover,
+#search-button:hover,
+#button-back-to-search:hover {
+  background-color: #001158;
+  color: rgb(238, 169, 84);
+  transition: color 0.6s;
+}
+
+#header h1 {
+  color: #001158;
+  font-family: "vestula", "Apple Chancery";
+  font-weight: 530;
+  text-align: center;
+  background-color: rgba(250, 251, 252, 0.6);
+  padding: 20px;
+  border-bottom-left-radius: 20%;
+  border-top-right-radius: 20%;
+}
+
+#header h1 span {
+  font-family: "Ibarra Real Nova", serif;
+}
+
+/* Footer */
+
+#footer {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(rgb(239, 238, 238), #c3c9e1);
+  align-items: center;
+  justify-content: center;
+  color: #001158;
+  border: 1px dotted #001158;
+  font-family: "Brush Script MT";
+}
+
+#footer p {
+  font-size: 26px;
+}
+
+/* My name: Amer Baranawi. */
+#footer h6 {
+  margin-left: 5px;
+  color: rgb(245, 76, 25);
+}
+
+/* Welcome Page */
+
+#interface {
+  width: 80%;
+  margin: 40px auto;
+}
+
+#welcome-page {
+  width: 100%;
+}
+
+#welcome-page h2 {
+  font-family: georgia, serif;
+  color: rgb(53, 52, 52);
+  font-weight: lighter;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 21px;
+}
+
+/* #welcome-page p {
+  color: rgb(110, 107, 107);
+  font-size: 17px;
+} */
+
+#nasa-div {
+  background-color: rgba(168, 183, 216, 0.2);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+#nasa-picture {
+  width: 380px;
+  margin: 10px;
+  margin-right: 15px;
+  border: 1px solid #001158;
+  flex-shrink: 1;
+}
+
+#nasa-paragraph {
+  margin-top: 10px;
+}
+
+#quote-fact-div {
+  display: flex;
+  margin-top: 40px;
+  /* border: 1px dashed darkorange; */
+  justify-content: space-between;
+}
+
+#quote-div,
+#fact-div {
+  flex: 1;
+  padding: 15px;
+  text-align: justify;
+  background-color: rgba(168, 183, 216, 0.2);
+  margin: 10px;
+}
+
+#quote-author {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Search Page. */
+
+form {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(168, 183, 216, 0.2);
+  display: flex;
+  font-size: 20px;
+}
+
+form input {
+  font-size: 18px;
+}
+
+#library-message {
+  margin-left: 20px;
+  align-self: center;
+}
+
+#library-message h3 {
+  font-size: 20px;
+  font-family: "georgia", serif;
+  font-weight: lighter;
+}
+
+#library-message h3 span {
+  color: rgb(255, 60, 0);
+}
+
+#search-container {
+  display: flex;
+  border: 1px dashed #7f88ab;
+  padding: 15px;
+}
+
+#statue {
+  flex: 1;
+  margin-right: 25px;
+  padding-right: 20px;
+  border-right: dashed 1px #7f88ab;
+}
+
+#statue img {
+  width: 300px;
+  margin-top: 10px;
+  border: solid 1px rgb(255, 60, 0);
+}
+
+#statue h3,
+#statue p {
+  margin-bottom: 10px;
+}
+
+#statue h3 {
+  color: rgb(53, 52, 52);
+}
+
+.result-card-div {
+  display: flex;
+  width: 350px;
+  height: 120px;
+  background-color: rgba(168, 183, 216, 0.2);
+  margin: 10px 10px 0px 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.result-card-div div {
+  padding: 15px;
+}
+
+.result-card-div div h4 {
+  margin-bottom: 10px;
+  color: rgb(64, 63, 63);
+}
+.result-card-div div p {
+  text-align: left;
+}
+.result-card-div img {
+  width: 86px;
+  height: 110px;
+  margin: 5px;
+}
+
+#search-result-div {
+  background-color: white;
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  overflow: scroll;
+}
+
+/* Book details page. */
+
+#bk-dtls-container {
+  width: 100%;
+}
+
+/* Title inside this div. */
+#bk-descrip-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#bk-title-div {
+  margin-right: 50px;
+  border-right: 1px dashed #7f88ab;
+  padding-right: 20px;
+}
+
+#bk-title-div h1 {
+  color: #0f1c52;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+#bk-title-div p {
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 1em;
+}
+
+#bk-title-div p span {
+  color: rgb(255, 60, 0);
+}
+
+#bk-descrip-div img {
+  width: 280px;
+}
+
+/* This Div is the description paragraph. */
+#bk-descrip-div div {
+  flex: 2;
+  margin-left: 20px;
+  margin-top: 30px;
+  justify-self: center;
+  align-self: center;
+}
+
+#bk-covers-div {
+  margin-top: 60px;
+}
+
+/* All book covers. */
+#bk-imgs {
+  margin-top: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(168, 183, 216, 0.2);
+  padding: 15px;
+  color: rgb(255, 60, 0);
+}
+
+#bk-imgs img {
+  width: 100px;
+  margin-left: 20px;
+}
+
+#bk-descrip-div h2,
+#bk-covers-div h2 {
+  color: #0f1c52;
+  font-size: 22px;
+  font-weight: lighter;
+  margin-bottom: 15px;
+}
+
+#button-back-to-search {
+  margin-top: 20px;
 }

@@ -30,8 +30,9 @@ export async function initSearchPage() {
     event.preventDefault();
   };
 
-  searchButton.addEventListener("click", async () => {
+  searchButton.addEventListener("click", async (event) => {
     // When search function is run, it will call this function: renderResultsCards.
+    event.preventDefault();
     await search();
     searchInput.value = "";
   });

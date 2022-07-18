@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchData } from "../../fetchData/fetchDataFunctions.js";
+import { fetchData } from "../../fetchData/fetchData.js";
 import { FUN_FACT_ID, FUN_FACT_URL } from "../../constant.js";
 
 export async function renderFunFactData() {

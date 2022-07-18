@@ -3,9 +3,11 @@
 import {
   LIBRARY_MESSAGE_ID,
   SEARCH_BUTTON_ID,
+  SEARCH_CONTAINER_ID,
   SEARCH_INPUT_ID,
   SEARCH_RESULTS_ID,
-  SEARCH_RESULT_CARD_ID,
+  SEARCH_RESULT_CARD_CLASS,
+  STATUE_ID,
   USER_INTERFACE_ID,
 } from "../constant.js";
 
@@ -13,14 +15,24 @@ export function createlibrarySearchElements() {
   const elements = document.getElementById(USER_INTERFACE_ID);
   elements.innerHTML = String.raw`
 
-            <h1>Welcome to the library</h1>
-            <form>
-                <lable>You can search about what ever you want:</lable>
-                <input type="text" placeholder="Your search text" id="${SEARCH_INPUT_ID}">
-            </form> 
-            <button id="${SEARCH_BUTTON_ID}">SEARCH</button>
-            <div id = "${LIBRARY_MESSAGE_ID}"></div>
-            <div id=${SEARCH_RESULTS_ID}></div>
+    <form>
+      <div>
+        <lable>Searching about: </lable>
+        <input type="text" placeholder="Your search text" id="${SEARCH_INPUT_ID}">
+        <button id="${SEARCH_BUTTON_ID}">SEARCH</button>
+      </div>
+        <div id = "${LIBRARY_MESSAGE_ID}"></div>
+    </form> 
+
+    <div id = "${SEARCH_CONTAINER_ID}">
+      <div id="${STATUE_ID}">
+        <h3>"Read even you drown!"</h3>
+        <p>Image of a statue in Finland, titled <br>"Read even if you drown!"</p>
+        <p>Reading the secret of the progress of nations and progress of people.</p>
+        <img src="./public/assets/readImage.jpeg" alt = "Image of a statue in Finland">
+      </div>     
+      <div id=${SEARCH_RESULTS_ID}></div>
+    </div>
     `;
   return elements;
 }
@@ -28,13 +40,15 @@ export function createlibrarySearchElements() {
 export function createSearchResultCard(src, bookName, authorName, key) {
   const resultCardDiv = document.createElement("div");
   resultCardDiv.setAttribute("key", key);
-  resultCardDiv.id = SEARCH_RESULT_CARD_ID;
+  resultCardDiv.className = SEARCH_RESULT_CARD_CLASS;
 
   resultCardDiv.innerHTML = String.raw`
 
-            <img src="${src}" alt="Book cover">
-            <h2>${bookName}</h2>
-            <p>${authorName}</p>
+    <img src="${src}" alt="Book cover">
+    <div>
+      <h4>Book title: ${bookName}</h4>
+      <p>The author: ${authorName}</p>
+    </div>
     `;
 
   return resultCardDiv;

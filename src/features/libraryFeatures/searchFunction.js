@@ -1,9 +1,9 @@
 "use strict";
 
 import { SEARCH_INPUT_ID, SEARCH_RESULTS_ID } from "../../constant.js";
-import { fetchData } from "../../fetchData/fetchDataFunctions.js";
+import { fetchData } from "../../fetchData/fetchData.js";
 import { renderMessage } from "./libraryMessage.js";
-import { renderResultsCards } from "./renderSearchResults.js";
+import { renderResultsCards } from "./searchResults.js";
 
 export async function search() {
   const searchInput = document.getElementById(SEARCH_INPUT_ID);

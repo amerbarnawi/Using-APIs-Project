@@ -5,6 +5,6 @@ export function renderMessage(message) {
   msgDiv.style.display = "block";
   msgDiv.innerHTML = "";
   const waitText = document.createElement("h3");
-  waitText.textContent = message;
+  waitText.innerHTML = `<span>Message:</span> ${message}`;
   msgDiv.appendChild(waitText);
 }

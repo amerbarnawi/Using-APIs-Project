@@ -1,4 +1,4 @@
-import { fetchData } from "../../fetchData/fetchDataFunctions.js";
+import { fetchData } from "../../fetchData/fetchData.js";
 import { QUOTE_URL, QUOTE_ID, QUOTE_AUTHOR_ID } from "../../constant.js";
 
 export async function renderQuoteData() {

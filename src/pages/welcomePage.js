@@ -22,14 +22,7 @@ export function initWelcomePage() {
   const welcomeElements = createWelcomeElements();
   userInterface.appendChild(welcomeElements);
 
-  // renderNasaData();
+  renderNasaData();
   renderQuoteData();
   renderFunFactData();
-
-  const libraryButton = document.getElementById(OPEN_LIBRARY_BUTTON_ID);
-  libraryButton.addEventListener("click", goToLibrary);
 }
-
-const goToLibrary = () => {
-  initSearchPage();
-};

@@ -1,10 +1,14 @@
-import { BUTTON_BACK_TO_SEARCH_ID, USER_INTERFACE_ID } from "../constant.js";
-import { fetchData } from "../fetchData/fetchDataFunctions.js";
+import {
+  BK_COVERS_ID,
+  BUTTON_BACK_TO_SEARCH_ID,
+  USER_INTERFACE_ID,
+} from "../constant.js";
+import { fetchData } from "../fetchData/fetchData.js";
 import { createBookDetailsElement } from "../views/bookDetailsView.js";
 import { initSearchPage } from "./librarySearchPage.js";
 import { libraryData } from "../data.js";
 import { refreshSessionStorage } from "../storage.js";
-import { renderBkCovers } from "../features/libraryFeatures/renderBookCovers.js";
+import { renderBkCovers } from "../features/libraryFeatures/bookCovers.js";
 import { renderMessage } from "../features/libraryFeatures/libraryMessage.js";
 
 export async function initBookDetails(key, title, author, src) {
@@ -53,6 +57,9 @@ export async function initBookDetails(key, title, author, src) {
 
     if (jsonBookDetails.covers) {
       renderBkCovers(jsonBookDetails.covers);
+    } else {
+      const ulCovers = document.getElementById(BK_COVERS_ID);
+      ulCovers.innerHTML = "<h4>There is no covers.</h4>";
     }
 
     const backButton = document.getElementById(BUTTON_BACK_TO_SEARCH_ID);

@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchData } from "../../fetchData/fetchDataFunctions.js";
+import { fetchData } from "../../fetchData/fetchData.js";
 import {
   NASA_PICTURE_URL,
   NASA_PICTURE_ID,
