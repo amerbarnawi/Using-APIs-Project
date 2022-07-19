@@ -36,7 +36,7 @@ function createHeaderElements() {
     <div>
       <button id = "${APP_INFO_ID}">APP INFO</button>
       <button id = "${BUTTON_BACK_TO_WELCOME_ID}">To Welcome</button>
-      <button id=${OPEN_LIBRARY_BUTTON_ID}>Search for Book</button>
+      <button id=${OPEN_LIBRARY_BUTTON_ID}>Book search</button>
     </div>
     `;
 

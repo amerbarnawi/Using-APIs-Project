@@ -27,11 +27,11 @@ export function createlibrarySearchElements() {
     <div id = "${SEARCH_CONTAINER_ID}">
       <div id="${STATUE_ID}">
         <h3>"Read even you drown!"</h3>
-        <p>Image of a statue in Finland, titled <br>"Read even if you drown!"</p>
+        <p>Image of a statue in Finland, titled<br>"Read even if you drown!"</p>
         <p>Reading the secret of the progress of nations and progress of people.</p>
         <img src="./public/assets/readImage.jpeg" alt = "Image of a statue in Finland">
       </div>     
-      <div id=${SEARCH_RESULTS_ID}></div>
+      <div id=${SEARCH_RESULTS_ID}>Search results cards.</div>
     </div>
     `;
   return elements;

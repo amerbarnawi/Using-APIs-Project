@@ -1,6 +1,7 @@
 "use strict";
 
 import { SEARCH_INPUT_ID, SEARCH_RESULTS_ID } from "../../constant.js";
+import { hideStatueBlock } from "../../cssSuport/mediaQuery.js";
 import { fetchData } from "../../fetchData/fetchData.js";
 import { renderMessage } from "./libraryMessage.js";
 import { renderResultsCards } from "./searchResults.js";
@@ -24,6 +25,12 @@ export async function search() {
           `You search for (${searchInput.value}), I found (${numberFound}) result!`
         );
 
+        // I hide the statue block (mobile).
+        const mediaQueryList = window.matchMedia("(max-width: 600px)");
+        hideStatueBlock(mediaQueryList);
+        mediaQueryList.addListener(hideStatueBlock);
+
+        // Rendering the results cards.
         resultsElement.innerHTML = "";
         renderResultsCards(jsonSearchResults, resultsElement);
       } else {

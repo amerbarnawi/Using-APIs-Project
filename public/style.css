@@ -142,10 +142,7 @@ p {
   font-size: 21px;
 }
 
-/* #welcome-page p {
-  color: rgb(110, 107, 107);
-  font-size: 17px;
-} */
+/* NASA */
 
 #nasa-div {
   background-color: rgba(168, 183, 216, 0.2);
@@ -155,24 +152,29 @@ p {
   position: relative;
   height: 100%;
   box-sizing: border-box;
-  display: flex;
+  overflow: auto;
 }
+
 #nasa-picture {
-  width: 380px;
+  float: left;
+  width: 40%;
   margin: 10px;
   margin-right: 15px;
   border: 1px solid #001158;
-  flex-shrink: 1;
 }
 
 #nasa-paragraph {
   margin-top: 10px;
 }
 
+/* Quote and facts */
+
+#quote-fact-div {
+  clear: left;
+}
 #quote-fact-div {
   display: flex;
   margin-top: 40px;
-  /* border: 1px dashed darkorange; */
   justify-content: space-between;
 }
 
@@ -197,6 +199,7 @@ form {
   padding: 20px;
   background-color: rgba(168, 183, 216, 0.2);
   display: flex;
+  flex-wrap: wrap;
   font-size: 20px;
 }
 
@@ -230,6 +233,7 @@ form input {
   margin-right: 25px;
   padding-right: 20px;
   border-right: dashed 1px #7f88ab;
+  text-align: center;
 }
 
 #statue img {
@@ -360,4 +364,122 @@ form input {
 
 #button-back-to-search {
   margin-top: 20px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  #library-message {
+    margin-top: 25px;
+  }
+
+  #bk-descrip-div {
+    flex-wrap: wrap;
+  }
+  #bk-descrip-div div:last-of-type {
+    min-width: 260px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* The header. */
+
+  #header {
+    flex-wrap: wrap;
+    height: 230px;
+  }
+
+  /* The application title. */
+  #header h1 {
+    font-size: 22px;
+    margin-right: 20px;
+  }
+
+  #header h2 {
+    font-size: 16px;
+    margin: 15px;
+  }
+
+  /* The nav-bar */
+  #header div {
+    flex-direction: row;
+    align-self: center;
+    background: none;
+    margin-right: 10px;
+  }
+
+  #header div button {
+    width: 105px;
+  }
+
+  #interface {
+    width: 90%;
+    margin: 40 auto;
+  }
+
+  #nasa-div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #nasa-div img {
+    width: 90%;
+  }
+
+  #quote-fact-div {
+    flex-direction: column;
+  }
+
+  /* Search page. */
+
+  form div {
+    text-align: center;
+  }
+
+  form div input,
+  p,
+  button {
+    margin-top: 15px;
+  }
+
+  #library-message {
+    margin-top: 25px;
+    text-align: left;
+  }
+
+  #library-message h3 {
+    font-size: 16px;
+  }
+
+  #search-container {
+    flex-direction: column;
+  }
+
+  #statue {
+    border: none;
+  }
+
+  #statue img {
+    margin-right: 30px;
+  }
+
+  #search-result-div {
+    max-height: 380px;
+  }
+
+  /* Detailse page. */
+
+  #bk-descrip-div {
+    flex-direction: column;
+  }
+  #bk-title-div {
+    order: 0;
+    border: none;
+  }
+
+  #bk-descrip-div div:first-of-type {
+    order: 1;
+  }
+
+  #bk-descrip-div div:last-of-type {
+    order: 10;
+  }
 }
