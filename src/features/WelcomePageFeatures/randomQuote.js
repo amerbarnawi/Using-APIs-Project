@@ -2,14 +2,12 @@
 
 import { fetchData } from "../../fetchData/fetchData.js";
 
-export async function genaratRandomQuote(jsonQuoteData) {
+//This function is to chose a random quote from random page ( This API has thousand of quotes).
+
+export async function generateRandomQuote(jsonQuoteData) {
   const randomPage =
     Math.floor(Math.random() * jsonQuoteData.pagination.totalPages) + 1;
   const randomNumber = Math.floor(Math.random() * jsonQuoteData.data.length);
-
-  //   console.log(randomPage);
-  //   console.log(randomNumber);
-  //   console.log(typeof jsonQuoteData.pagination.totalPages);
 
   const url = `https://quote-garden.herokuapp.com/api/v3/quotes?page=${randomPage}`;
 

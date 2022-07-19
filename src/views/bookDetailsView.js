@@ -3,7 +3,7 @@
 import {
   BK_COVERS_DIV_ID,
   BK_COVERS_ID,
-  BK_DESCRIP_DIV_ID,
+  BOOK_DESCRIPTION_DIV_ID,
   BK_TITLE_DIV_ID,
   BOOK_DETAILS_CONTAINER_ID,
   BUTTON_BACK_TO_SEARCH_ID,
@@ -15,7 +15,7 @@ export function createBookDetailsElement(bookTitle, author, src, description) {
 
   element.innerHTML = String.raw`
 
-        <div id="${BK_DESCRIP_DIV_ID}"> 
+        <div id="${BOOK_DESCRIPTION_DIV_ID}"> 
           <div><img src=${src} alt="Book Photo"></div>
           <div id="${BK_TITLE_DIV_ID}"> 
             <h1>${bookTitle}</h1>

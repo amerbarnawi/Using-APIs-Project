@@ -11,13 +11,13 @@ import {
   USER_INTERFACE_ID,
 } from "../constant.js";
 
-export function createlibrarySearchElements() {
+export function createLibrarySearchElements() {
   const elements = document.getElementById(USER_INTERFACE_ID);
   elements.innerHTML = String.raw`
 
     <form>
       <div>
-        <lable>Searching about: </lable>
+        <label>Searching about: </label>
         <input type="text" placeholder="Your search text" id="${SEARCH_INPUT_ID}">
         <button id="${SEARCH_BUTTON_ID}">SEARCH</button>
       </div>
@@ -26,13 +26,14 @@ export function createlibrarySearchElements() {
 
     <div id = "${SEARCH_CONTAINER_ID}">
       <div id="${STATUE_ID}">
-        <h3>"Read even you drown!"</h3>
+        <h3>"Read even if you drown!"</h3>
         <p>Image of a statue in Finland, titled<br>"Read even if you drown!"</p>
         <p>Reading the secret of the progress of nations and progress of people.</p>
         <img src="./public/assets/readImage.jpeg" alt = "Image of a statue in Finland">
       </div>     
       <div id=${SEARCH_RESULTS_ID}>Search results cards.</div>
     </div>
+    
     `;
   return elements;
 }

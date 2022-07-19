@@ -1,6 +1,6 @@
 "use strict";
 
-// This data for the session storge.
+// This data for the session storage.
 export const libraryData = {
   currentPage: {
     searchPage: false,

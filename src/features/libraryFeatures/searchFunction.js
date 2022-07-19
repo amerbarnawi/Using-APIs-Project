@@ -3,19 +3,19 @@
 import { SEARCH_INPUT_ID, SEARCH_RESULTS_ID } from "../../constant.js";
 
 import { fetchData } from "../../fetchData/fetchData.js";
-import { hideStatueBlock } from "../cssSuport/mediaQuery.js";
+import { hideStatueBlock } from "../cssSupport/mediaQuery.js";
 import { renderMessage } from "./libraryMessage.js";
 import { renderResultsCards } from "./searchResults.js";
 
-export async function search() {
-  const searchInput = document.getElementById(SEARCH_INPUT_ID);
+export async function search(value) {
   const resultsElement = document.getElementById(SEARCH_RESULTS_ID);
+  resultsElement.innerHTML = "";
 
   renderMessage("Please wait, books are loading..");
 
-  const url = `http://openlibrary.org/search.json?q=${searchInput.value}`;
+  const url = `http://openlibrary.org/search.json?q=${value}`;
 
-  if (searchInput.value !== "") {
+  if (value !== "") {
     try {
       const jsonSearchResults = await fetchData(url);
 
@@ -23,13 +23,15 @@ export async function search() {
         // In case there is results.
         const numberFound = jsonSearchResults.numFound;
         renderMessage(
-          `You search for (${searchInput.value}), I found (${numberFound}) result!`
+          `You search for (${value}), I found (${numberFound}) result!`
         );
 
         // I hide the statue block (mobile).
+        // This will happen only when the application have results to show.
+        // Or, I can add attribute here and style it by CSS ( display : 'none').
         const mediaQueryList = window.matchMedia("(max-width: 600px)");
         hideStatueBlock(mediaQueryList);
-        mediaQueryList.addListener(hideStatueBlock);
+        mediaQueryList.addEventListener("change", hideStatueBlock);
 
         // Rendering the results cards.
         resultsElement.innerHTML = "";

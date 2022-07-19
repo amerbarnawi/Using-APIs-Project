@@ -9,7 +9,7 @@ const loadApp = () => {
   initHeader();
   initFooter();
 
-  if (sessionStorage.strgBkData) {
+  if (sessionStorage.storageBookData) {
     updateFromStorageData();
   } else {
     initWelcomePage();

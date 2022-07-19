@@ -7,15 +7,16 @@ import {
 } from "../constant.js";
 import { fetchData } from "../fetchData/fetchData.js";
 import { createBookDetailsElement } from "../views/bookDetailsView.js";
-import { initSearchPage } from "./librarySearchPage.js";
+import { initSearchPage } from "./searchPage.js";
 import { libraryData } from "../data.js";
 import { refreshSessionStorage } from "../storage.js";
 import { renderBkCovers } from "../features/libraryFeatures/bookCovers.js";
 import { renderMessage } from "../features/libraryFeatures/libraryMessage.js";
+import { search } from "../features/libraryFeatures/searchFunction.js";
 
 let bookDescription = "";
 
-export async function initBookDetails(key, title, author, src) {
+export async function initBookDetails(key, title, author, src, searchValue) {
   // Data for the storage.
   libraryData.currentPage.searchPage = false;
   libraryData.currentPage.bookDetailsPage = true;
@@ -29,7 +30,7 @@ export async function initBookDetails(key, title, author, src) {
     } else {
       bookDescription = "There is no description for this book.";
     }
-    console.log(bookDescription);
+
     const bookDetailsElement = createBookDetailsElement(
       title,
       author,
@@ -51,12 +52,13 @@ export async function initBookDetails(key, title, author, src) {
       renderBkCovers(jsonBookDetails.covers);
     } else {
       const ulCovers = document.getElementById(BK_COVERS_ID);
-      ulCovers.innerHTML = "<h4>There is no covers.</h4>";
+      ulCovers.innerHTML = "<h4>There are no covers.</h4>";
     }
 
     const backButton = document.getElementById(BUTTON_BACK_TO_SEARCH_ID);
     backButton.addEventListener("click", () => {
       initSearchPage();
+      search(searchValue);
     });
     refreshSessionStorage();
   } catch (error) {
@@ -70,7 +72,5 @@ function getDescription(jsonBookDetails) {
     console.log("object");
   } else if (typeof jsonBookDetails.description === "string") {
     bookDescription = jsonBookDetails.description;
-    console.log(jsonBookDetails.description);
-    console.log("string");
   }
 }

@@ -1,9 +1,11 @@
 "use strict";
 
-import { createSearchResultCard } from "../../views/librarySearchView.js";
+import { createSearchResultCard } from "../../views/searchView.js";
 import { initBookDetails } from "../../pages/bookDetailsPage.js";
 
 export function renderResultsCards(jsonSearchResults, resultsElement) {
+  const searchValue = jsonSearchResults.q;
+
   jsonSearchResults.docs.forEach((book) => {
     const bookTitle = book.title;
     const authorName = book.author_name;
@@ -23,7 +25,13 @@ export function renderResultsCards(jsonSearchResults, resultsElement) {
     resultsElement.appendChild(searchResultCard);
 
     searchResultCard.addEventListener("click", async () => {
-      await initBookDetails(bookKey, bookTitle, authorName, imgSrc);
+      await initBookDetails(
+        bookKey,
+        bookTitle,
+        authorName,
+        imgSrc,
+        searchValue
+      );
     });
   });
 }

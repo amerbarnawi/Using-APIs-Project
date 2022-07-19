@@ -259,6 +259,7 @@ form input {
   margin: 10px 10px 0px 10px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 3px 3px 3px rgb(195, 194, 194);
 }
 
 .result-card-div div {

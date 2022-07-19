@@ -5,7 +5,7 @@
 // export const COVER_URL = `https://covers.openlibrary.org/b/id/${value}-L.jpg`; // value = Cover ID.
 // export const AUTHOR_URL = `http://openlibrary.org/${value}.json`; // value = Authors Key.
 
-// URL AS CONSTATNTS:
+// URL as constants:
 export const NASA_PICTURE_URL =
   "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 export const QUOTE_URL = `https://quote-garden.herokuapp.com/api/v3/quotes`;
@@ -32,7 +32,7 @@ export const BUTTON_BACK_TO_WELCOME_ID = "button-back-to-welcome";
 export const BK_COVERS_ID = "bk-imgs";
 export const FACT_DIV_ID = "fact-div";
 export const BK_TITLE_DIV_ID = "bk-title-div";
-export const BK_DESCRIP_DIV_ID = "bk-descrip-div";
+export const BOOK_DESCRIPTION_DIV_ID = "bk-descrip-div";
 export const BK_COVERS_DIV_ID = "bk-covers-div";
 export const HEADER_ID = "header";
 export const FOOTER_ID = "footer";

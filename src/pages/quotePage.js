@@ -1,7 +1,7 @@
 "use strict";
 
 import { QUOTE_AUTHOR_ID, QUOTE_ID, QUOTE_URL } from "../constant.js";
-import { genaratRandomQuote } from "../features/WelcomePageFeatures/randomQuote.js";
+import { generateRandomQuote } from "../features/WelcomePageFeatures/randomQuote.js";
 import { fetchData } from "../fetchData/fetchData.js";
 import { createQuoteElement } from "../views/quoteView.js";
 
@@ -12,7 +12,7 @@ export async function renderQuoteData() {
 
   try {
     const jsonQuoteData = await fetchData(QUOTE_URL);
-    const randomQuote = await genaratRandomQuote(jsonQuoteData);
+    const randomQuote = await generateRandomQuote(jsonQuoteData);
 
     quoteText.textContent = randomQuote.quoteText;
 

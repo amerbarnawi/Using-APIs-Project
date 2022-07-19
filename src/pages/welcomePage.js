@@ -1,9 +1,7 @@
 "use strict";
 
-import { OPEN_LIBRARY_BUTTON_ID, USER_INTERFACE_ID } from "../constant.js";
+import { USER_INTERFACE_ID } from "../constant.js";
 import { createWelcomeElements } from "../views/welcomeView.js";
-
-import { initSearchPage } from "./librarySearchPage.js";
 import { refreshSessionStorage } from "../storage.js";
 import { libraryData } from "../data.js";
 import { renderNasaData } from "./nasaPage.js";
