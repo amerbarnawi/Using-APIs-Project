@@ -1,3 +1,5 @@
+"use strict";
+
 import {
   BK_COVERS_DIV_ID,
   BK_COVERS_ID,

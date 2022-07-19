@@ -1,3 +1,5 @@
+"use strict";
+
 import { LIBRARY_MESSAGE_ID } from "../../constant.js";
 
 export function renderMessage(message) {

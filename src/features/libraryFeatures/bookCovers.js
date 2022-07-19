@@ -1,3 +1,5 @@
+"use strict";
+
 import { BK_COVERS_ID } from "../../constant.js";
 
 export function renderBkCovers(imagesIdArray) {

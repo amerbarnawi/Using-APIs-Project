@@ -1,8 +1,9 @@
 "use strict";
 
 import { SEARCH_INPUT_ID, SEARCH_RESULTS_ID } from "../../constant.js";
-import { hideStatueBlock } from "../../cssSuport/mediaQuery.js";
+
 import { fetchData } from "../../fetchData/fetchData.js";
+import { hideStatueBlock } from "../cssSuport/mediaQuery.js";
 import { renderMessage } from "./libraryMessage.js";
 import { renderResultsCards } from "./searchResults.js";
 

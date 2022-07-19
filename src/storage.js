@@ -1,3 +1,5 @@
+"use strict";
+
 import { libraryData } from "./data.js";
 import { initBookDetails } from "./pages/bookDetailsPage.js";
 import { initSearchPage } from "./pages/librarySearchPage.js";

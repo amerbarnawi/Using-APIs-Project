@@ -1,13 +1,16 @@
 "use strict";
 
-import { fetchData } from "../../fetchData/fetchData.js";
 import {
-  NASA_PICTURE_URL,
-  NASA_PICTURE_ID,
   NASA_DESCRIPTION_ID,
-} from "../../constant.js";
+  NASA_PICTURE_ID,
+  NASA_PICTURE_URL,
+} from "../constant.js";
+import { fetchData } from "../fetchData/fetchData.js";
+import { createNasaElement } from "../views/nasaView.js";
 
 export async function renderNasaData() {
+  createNasaElement();
+
   const nasaPicture = document.getElementById(NASA_PICTURE_ID);
   const nasaDescription = document.getElementById(NASA_DESCRIPTION_ID);
 

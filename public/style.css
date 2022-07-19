@@ -482,4 +482,8 @@ form input {
   #bk-descrip-div div:last-of-type {
     order: 10;
   }
+
+  #bk-imgs img {
+    width: 85px;
+  }
 }

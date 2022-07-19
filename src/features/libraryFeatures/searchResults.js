@@ -1,3 +1,5 @@
+"use strict";
+
 import { createSearchResultCard } from "../../views/librarySearchView.js";
 import { initBookDetails } from "../../pages/bookDetailsPage.js";
 

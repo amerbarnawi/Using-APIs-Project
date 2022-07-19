@@ -1,3 +1,5 @@
+"use strict";
+
 // This data for the session storge.
 export const libraryData = {
   currentPage: {

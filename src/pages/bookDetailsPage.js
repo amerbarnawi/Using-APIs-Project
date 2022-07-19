@@ -1,3 +1,5 @@
+"use strict";
+
 import {
   BK_COVERS_ID,
   BUTTON_BACK_TO_SEARCH_ID,
@@ -11,6 +13,8 @@ import { refreshSessionStorage } from "../storage.js";
 import { renderBkCovers } from "../features/libraryFeatures/bookCovers.js";
 import { renderMessage } from "../features/libraryFeatures/libraryMessage.js";
 
+let bookDescription = "";
+
 export async function initBookDetails(key, title, author, src) {
   // Data for the storage.
   libraryData.currentPage.searchPage = false;
@@ -20,17 +24,12 @@ export async function initBookDetails(key, title, author, src) {
     const url = `http://openlibrary.org${key}.json`;
     const jsonBookDetails = await fetchData(url);
 
-    let bookDescription = "";
     if (jsonBookDetails.description) {
-      if (typeof jsonBookDetails.description !== "string") {
-        bookDescription = jsonBookDetails.description.value;
-      } else if (typeof jsonBookDetails.description === "string") {
-        bookDescription = jsonBookDetails.description;
-      }
+      getDescription(jsonBookDetails);
     } else {
       bookDescription = "There is no description for this book.";
     }
-
+    console.log(bookDescription);
     const bookDetailsElement = createBookDetailsElement(
       title,
       author,
@@ -43,13 +42,6 @@ export async function initBookDetails(key, title, author, src) {
     libraryData.bookDetailsPage.title = title;
     libraryData.bookDetailsPage.imgSrc = src;
     libraryData.bookDetailsPage.key = key;
-
-    console.log(title);
-    console.log(author);
-    console.log(src);
-    console.log(bookDescription);
-    console.log(bookDetailsElement);
-    console.log(typeof jsonBookDetails.description);
 
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = "";
@@ -69,5 +61,16 @@ export async function initBookDetails(key, title, author, src) {
     refreshSessionStorage();
   } catch (error) {
     renderMessage(`Sorry, something went wrong (${error.message})`);
+  }
+}
+
+function getDescription(jsonBookDetails) {
+  if (typeof jsonBookDetails.description !== "string") {
+    bookDescription = jsonBookDetails.description.value;
+    console.log("object");
+  } else if (typeof jsonBookDetails.description === "string") {
+    bookDescription = jsonBookDetails.description;
+    console.log(jsonBookDetails.description);
+    console.log("string");
   }
 }

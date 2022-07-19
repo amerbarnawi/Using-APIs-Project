@@ -1,7 +1,7 @@
 "use strict";
 
-import { initFooter } from "./headerAndFooter/footer.js";
-import { initHeader } from "./headerAndFooter/header.js";
+import { initFooter } from "./pages/footerPage.js";
+import { initHeader } from "./pages/headerPage.js";
 import { initWelcomePage } from "./pages/welcomePage.js";
 import { updateFromStorageData } from "./storage.js";
 
