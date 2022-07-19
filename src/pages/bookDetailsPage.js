@@ -69,7 +69,6 @@ export async function initBookDetails(key, title, author, src, searchValue) {
 function getDescription(jsonBookDetails) {
   if (typeof jsonBookDetails.description !== "string") {
     bookDescription = jsonBookDetails.description.value;
-    console.log("object");
   } else if (typeof jsonBookDetails.description === "string") {
     bookDescription = jsonBookDetails.description;
   }

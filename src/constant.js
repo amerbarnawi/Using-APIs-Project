@@ -1,10 +1,5 @@
 "use strict";
 
-// export const SEARCH_URL = `http://openlibrary.org/search.json?q=${value}`; // value = Search value.
-// export const BOOK_URL = `http://openlibrary.org/${value}.json`; // value = book key.
-// export const COVER_URL = `https://covers.openlibrary.org/b/id/${value}-L.jpg`; // value = Cover ID.
-// export const AUTHOR_URL = `http://openlibrary.org/${value}.json`; // value = Authors Key.
-
 // URL as constants:
 export const NASA_PICTURE_URL =
   "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
@@ -25,14 +20,14 @@ export const QUOTE_FACT_DIV_ID = "quote-fact-div";
 export const SEARCH_RESULTS_ID = "search-result-div";
 export const SEARCH_RESULT_CARD_CLASS = "result-card-div";
 export const SEARCH_BUTTON_ID = "search-button";
-export const SEARCH_INPUT_ID = "search-inbut";
+export const SEARCH_INPUT_ID = "search-input";
 export const LIBRARY_MESSAGE_ID = "library-message";
 export const BUTTON_BACK_TO_SEARCH_ID = "button-back-to-search";
 export const BUTTON_BACK_TO_WELCOME_ID = "button-back-to-welcome";
 export const BK_COVERS_ID = "bk-imgs";
 export const FACT_DIV_ID = "fact-div";
 export const BK_TITLE_DIV_ID = "bk-title-div";
-export const BOOK_DESCRIPTION_DIV_ID = "bk-descrip-div";
+export const BOOK_DESCRIPTION_DIV_ID = "book-description-div";
 export const BK_COVERS_DIV_ID = "bk-covers-div";
 export const HEADER_ID = "header";
 export const FOOTER_ID = "footer";

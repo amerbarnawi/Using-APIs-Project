@@ -1,13 +1,16 @@
 "use strict";
 
 import { STATUE_ID } from "../../constant.js";
+import { libraryData } from "../../data.js";
 
 export function hideStatueBlock(mediaQueryList) {
-  const statueBlock = document.getElementById(STATUE_ID);
+  if (libraryData.currentPage.searchPage) {
+    const statueBlock = document.getElementById(STATUE_ID);
 
-  if (mediaQueryList.matches) {
-    statueBlock.style.display = "none";
-  } else {
-    statueBlock.style.display = "block";
+    if (mediaQueryList.matches) {
+      statueBlock.style.display = "none";
+    } else {
+      statueBlock.style.display = "block";
+    }
   }
 }

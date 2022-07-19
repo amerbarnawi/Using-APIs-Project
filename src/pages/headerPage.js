@@ -1,6 +1,7 @@
 "use strict";
 
 import {
+  APP_INFO_ID,
   BUTTON_BACK_TO_WELCOME_ID,
   HEADER_ID,
   OPEN_LIBRARY_BUTTON_ID,
@@ -20,6 +21,7 @@ export async function initHeader() {
 
   const toWelcomeButton = document.getElementById(BUTTON_BACK_TO_WELCOME_ID);
   const toLibraryButton = document.getElementById(OPEN_LIBRARY_BUTTON_ID);
+  const appInfo = document.getElementById(APP_INFO_ID);
 
   toWelcomeButton.addEventListener("click", () => {
     initWelcomePage();
@@ -27,5 +29,9 @@ export async function initHeader() {
 
   toLibraryButton.addEventListener("click", () => {
     initSearchPage();
+  });
+
+  appInfo.addEventListener("click", () => {
+    window.location = "https://github.com/amerbarnawi/Using-APIs-Project";
   });
 }

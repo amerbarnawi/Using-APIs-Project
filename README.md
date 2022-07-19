@@ -1,6 +1,7 @@
-# Open your mind library | Using APIs project
+# Open your mind library || Using APIs project
 
-You can use the application from here:[Open Your Mind Library](https://).
+You can use the application from here: !Maybe you can not use the search on GitHub.
+[Open Your Mind Library](https://amerbarnawi.github.io/Using-APIs-Project/index.html).
 
 ## Project description
 
@@ -9,12 +10,12 @@ You can use the application from here:[Open Your Mind Library](https://).
 
 ![Home page](/public/assets/project.png)
 
-## I used those APIs in this project
+## APIs for this project
 
+- Open library: https://openlibrary.org/developers/api
 - NASA API: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
 - Quote: https://quote-garden.herokuapp.com/api/v3/quotes
 - Fun fact: https://asli-fun-fact-api.herokuapp.com/
-- Open library: https://openlibrary.org/developers/api
 
 ## The project structure
 
@@ -56,12 +57,12 @@ You can use the application from here:[Open Your Mind Library](https://).
 - Book details page (Some details about the book).
 - Back button in details page to go back to the search results.
 - Session storage to keep the opened page in refresh state.
-- Prepare the repository.
+- Preparing the repository.
 
 ## NICE TO HAVE ( In the future )
 
 - The ability to add the book to favorites.
-- Next and previous buttons to move between search results.
+- Next and previous buttons to change between search results.
 
 ## The Design
 
@@ -69,4 +70,5 @@ I designed it by myself.
 
 ## Advice to use this app
 
-The best browser to use is ( Chrome ).
+1. The best browser to use is ( Chrome ).
+2. Clone the repository to your computer.

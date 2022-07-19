@@ -12,9 +12,9 @@ export function refreshSessionStorage() {
 export function updateFromStorageData() {
   const myStorageData = JSON.parse(sessionStorage.storageBookData);
 
-  if (myStorageData.currentPage.searchPage === true) {
+  if (myStorageData.currentPage.searchPage) {
     initSearchPage();
-  } else if (myStorageData.currentPage.bookDetailsPage === true) {
+  } else if (myStorageData.currentPage.bookDetailsPage) {
     initBookDetails(
       myStorageData.bookDetailsPage.key,
       myStorageData.bookDetailsPage.title,

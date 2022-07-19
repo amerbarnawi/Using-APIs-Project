@@ -14,10 +14,6 @@ p {
   text-align: justify;
 }
 
-#library-message {
-  display: none;
-}
-
 /* Header */
 
 #header {
@@ -290,12 +286,12 @@ form input {
 
 /* Book details page. */
 
-#bk-dtls-container {
+#book-details-container {
   width: 100%;
 }
 
 /* Title inside this div. */
-#bk-descrip-div {
+#book-description-div {
   display: flex;
   flex-wrap: wrap;
 }
@@ -322,12 +318,12 @@ form input {
   color: rgb(255, 60, 0);
 }
 
-#bk-descrip-div img {
+#book-description-div img {
   width: 280px;
 }
 
 /* This Div is the description paragraph. */
-#bk-descrip-div div {
+#book-description-div div {
   flex: 2;
   margin-left: 20px;
   margin-top: 30px;
@@ -355,7 +351,7 @@ form input {
   margin-left: 20px;
 }
 
-#bk-descrip-div h2,
+#book-description-div h2,
 #bk-covers-div h2 {
   color: #0f1c52;
   font-size: 22px;
@@ -372,10 +368,10 @@ form input {
     margin-top: 25px;
   }
 
-  #bk-descrip-div {
+  #book-description-div {
     flex-wrap: wrap;
   }
-  #bk-descrip-div div:last-of-type {
+  #book-description-div div:last-of-type {
     min-width: 260px;
   }
 }
@@ -466,9 +462,9 @@ form input {
     max-height: 380px;
   }
 
-  /* Detailse page. */
+  /* Details page. */
 
-  #bk-descrip-div {
+  #book-description-div {
     flex-direction: column;
   }
   #bk-title-div {
@@ -476,11 +472,11 @@ form input {
     border: none;
   }
 
-  #bk-descrip-div div:first-of-type {
+  #book-description-div div:first-of-type {
     order: 1;
   }
 
-  #bk-descrip-div div:last-of-type {
+  #book-description-div div:last-of-type {
     order: 10;
   }
 
