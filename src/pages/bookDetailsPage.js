@@ -22,7 +22,7 @@ export async function initBookDetails(key, title, author, src, searchValue) {
   libraryData.currentPage.bookDetailsPage = true;
 
   try {
-    const url = `http://openlibrary.org${key}.json`;
+    const url = `https://openlibrary.org${key}.json`;
     const jsonBookDetails = await fetchData(url);
 
     if (jsonBookDetails.description) {
