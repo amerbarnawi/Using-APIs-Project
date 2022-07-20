@@ -12,7 +12,7 @@ export async function search(value) {
 
   renderMessage("Please wait, books are loading..");
 
-  const url = `http://openlibrary.org/search.json?q=${value}`;
+  const url = `https://openlibrary.org/search.json?q=${value}`;
 
   if (value !== "") {
     try {
